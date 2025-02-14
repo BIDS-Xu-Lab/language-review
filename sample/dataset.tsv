@@ -1,0 +1,26 @@
+note_id	note_text	language_detect	decision_datetime
+12347712	This Pt speak both English and French.	yes	
+212319812	Le patient parle anglais et français.	no	2025-2-13 22:20:38
+1121553	Kan dit pasiënt Engels en only, Patient Name: NameDate of Birth: DATE \nDate of Service: 02/13\nSubjective:\nPatient presents with a 3-day history of productive cough, reporting greenish sputum, mild dyspnea, and intermittent fever peaking at 101°F. Denies chest pain, hemoptysis, or recent travel. Past medical history significant for hypertension, managed with lisinopril. \nObjective:\n- Vital Signs: BP 130/85 mmHg, HR 88 bpm, RR 18 breaths/min, Temp 100.8°F, SpO₂ 95% on room air.\n- General: Alert and oriented; no acute distress.\n- Respiratory: Coarse crackles noted in the right lower lobe; no wheezes.\n- Cardiovascular: Regular rate and rhythm; no murmurs..	no	
+991239123	Here is a very long sample note that is in English. It is very long and has a lot of text. It is a very long note. However, no other language mentioned in this note\nOK	yes	
+123123123	"No day "	yes	
+11	Patient reports sore throat, runny nose, and fever since yesterday.	no	
+21	"Tiene dolor de cabeza y tos seca desde anoche.  "	no	
+113	"Patient complains of chills, body aches, and fatigue. "	no	
+114	"환자가 기침과 코막힘, 미열을 호소합니다. "	no	
+115	"Reports severe congestion, sneezing, and watery eyes. "	no	
+116	"Paciente dice que tiene escalofríos y dolor de garganta. "	no	
+117	"Patient mentions cough with yellow phlegm and mild headache. "	no	
+118	"患者诉说喉咙痛、流鼻涕和轻微发烧。 "	no	
+119	"Says throat is scratchy and feels very tired. "	no	
+110	"Пациент жалуется на кашель, насморк и температуру. "	yes	
+211	"Complains of sore throat, congestion, and muscle aches. "	no	
+212	"مریض کھانسی اور گلے میں خراش کی شکایت کر رہا ہے۔ "	yes	
+213	"Patient reports fever, body aches, and dry cough. "	no	
+214	"Pasyente ay may ubo, sipon, at pananakit ng katawan. "	no	
+215	"Reports nasal congestion and headache with chills. "	no	
+216	"Paciente refiere dolor corporal y fiebre baja. "	no	
+217	"Patient says: ""Head feels heavy, coughing a lot."" "	no	
+218	"مرضي شكايت مي كرتا هے كه اسه بخار اور سردي لاغ رهی هے۔ "	yes	
+219	"Says cough worsens at night with sore throat. "	no	
+220	患者表示晚上咳嗽加重并伴有喉咙痛	no	
