@@ -8,11 +8,10 @@ import { pubmed } from './utils/pubmed';
 
 export const useDataStore = defineStore('jarvis', {
 state: () => ({
-    version: '0.9.3b',
+    version: '1.0.0',
     current_page: '',
     config: {
         keywords: [
-            {token: "cancer", bgcolor:"#ECDCAC"},
             {token: "data", bgcolor:"#FFA704"},
         ],
 
@@ -41,17 +40,17 @@ state: () => ({
                 "temperature": 0,
                 "system_prompt": "You are a helpful assistant.",
             },
-            claude: {
-                "id": "claude",
-                "service_type": "claude",
-                "name": "Claude 3.5 Haiku",
-                "model_name": "claude-3-5-haiku-20241022",
-                "endpoint": "https://api.anthropic.com/v1/messages",
-                "enabled": true,
-                "api_key": "",
-                "temperature": 0,
-                "system_prompt": "You are a helpful assistant.",
-            },
+            // claude: {
+            //     "id": "claude",
+            //     "service_type": "claude",
+            //     "name": "Claude 3.5 Haiku",
+            //     "model_name": "claude-3-5-haiku-20241022",
+            //     "endpoint": "https://api.anthropic.com/v1/messages",
+            //     "enabled": true,
+            //     "api_key": "",
+            //     "temperature": 0,
+            //     "system_prompt": "You are a helpful assistant.",
+            // },
         },
 
         features: {
@@ -77,8 +76,7 @@ state: () => ({
      */
     items: [],
 
-    // global functions for all components
-    working_item_idx: -1,
+    working_item: null,
 
     // taxonomy
     taxonomy_file: null,
@@ -166,25 +164,18 @@ getters: {
         });
     },
 
-    working_item(state) {
-        if (state.working_item_idx == -1) {
-            return null;
-        }
-        return state.items[state.working_item_idx];
-    },
-
     keywords_list(state) {
         return state.config.keywords.join("\n");
     },
 
     has_working_item_note_text(state) {
-        if (state.working_item_idx == -1) {
+        if (!state.working_item) {
             return false;
         }
-        if (!state.items[state.working_item_idx].hasOwnProperty('note_text')) {
+        if (!state.working_item.hasOwnProperty('note_text')) {
             return false;
         }
-        if (state.items[state.working_item_idx].note_text == null) {
+        if (state.working_item.note_text == null) {
             return false;
         }
         return true;
@@ -216,21 +207,11 @@ actions: {
         return true;
     },
 
-    hasWorkingItemTranslation: function(section) {
-        if (this.working_item_idx == -1) {
-            return false;
+    countItemsLanguageDetect: function(value) {
+        if (value == null) {
+            return this.items.filter(item => item.language_detect == null || item.language_detect == '').length;
         }
-        if (!this.translation.hasOwnProperty(this.working_item.note_id)) {
-            return false;
-        }
-        if (!this.translation[this.working_item.note_id].hasOwnProperty(section)) {
-            return false;
-        }
-        return true;
-    },
-
-    getWorkingItemTranslation: function(section) {
-        return this.translation[this.working_item.note_id][section];
+        return this.items.filter(item => item.language_detect == value).length;
     },
 
     formatTsvRow: function(row) {

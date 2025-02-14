@@ -63,7 +63,7 @@ async function onClickDecision(result) {
 </template>
 
 <template #footer>
-<div v-if="store.working_item_idx != -1 && store.working_item"
+<div v-if="store.working_item"
     class="flex flex-wrap items-center justify-between gap-4">
     <div class="flex items-center gap-2">
         
@@ -98,7 +98,7 @@ async function onClickDecision(result) {
 <div class="flex w-full"
     style="height: calc(100svh - 22.5rem); overflow-y: auto;">
     
-    <div v-if="store.working_item_idx != -1 && store.working_item">
+    <div v-if="store.working_item">
         <div class="mb-2">
             <p class="title">
                 Note ID:

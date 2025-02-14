@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
-import { useDataStore } from "../DataStore";
 import dayjs from "dayjs";
+import { useDataStore } from "../DataStore";
 import { fsOpenFile } from "../utils/fs_helper";
 
 const store = useDataStore();
@@ -205,9 +205,9 @@ const toggle = (event) => {
 </template>
 
 <div>
-<Tabs value="0">
+<Tabs value="general">
 <TabList>
-    <Tab value="0">
+    <Tab value="general">
         <i class="fa fa-cog"></i>
         General
     </Tab>
@@ -215,86 +215,12 @@ const toggle = (event) => {
         <i class="fa fa-robot"></i>
         Chatbot
     </Tab>
-    <Tab value="taxonomy">
-        <i class="fa fa-list"></i>
-        Taxonomy
-    </Tab>
-    <Tab value="prompt">
-        <i class="fa fa-comment"></i>
-        Prompt
-    </Tab>
     <Tab value="2">
         <i class="fa-solid fa-flask"></i>
         Other
     </Tab>
 </TabList>
 <TabPanels style="height: calc(100vh - 15rem); overflow-y: auto;">
-<TabPanel value="taxonomy">
-    <template v-if="store.taxonomy_file == null">
-        <p>
-            Taxonomy file is not loaded yet.
-        </p>
-    </template>
-    <template v-else>
-        <div class="flex flex-col mb-1 pb-1 border-b">
-            <span>
-                ATTENTION: Any change here affects the prompt.
-            </span>
-            
-            <div class="flex gap-2">
-                <Button severity="secondary"
-                    icon="pi pi-file"
-                    label="Update"
-                    size="small"
-                    v-tooltip.bottom="'Updat the current dropdown list'"
-                    @click="onClickUpdateTaxonomy">
-                </Button>
-
-                <Button severity="secondary"
-                    icon="pi pi-save"
-                    label="Save to file"
-                    size="small"
-                    v-tooltip.bottom="'Save the content to the current taxonomy file ' + store.taxonomy_file.name"
-                    @click="onClickSaveTaxonomy">
-                </Button>
-            </div>
-
-        </div>
-        <textarea class="w-full p-2 font-mono"
-            style="height: calc(100svh - 23rem);"
-            v-model="store.taxonomy_text"></textarea>
-    </template>
-
-</TabPanel>
-
-
-<TabPanel value="prompt">
-    <template v-if="store.prompt_file == null">
-        <p>
-            Prompt file is not loaded yet.
-        </p>
-    </template>
-    <template v-else>
-        <div class="mb-1 pb-1 border-b">
-            <span>
-                ATTENTION: Any change here affects the performance.
-            </span>
-            
-            <Button severity="secondary"
-                icon="pi pi-save"
-                size="small"
-                label="Save to file"
-                v-tooltip.bottom="'Save the content to the current taxonomy file ' + store.prompt_file.name"
-                @click="onClickSavePrompt">
-            </Button>
-        </div>
-        <textarea class="w-full p-2"
-            style="height: calc(100svh - 23rem);"
-            v-model="store.llm_prompt_template"></textarea>
-    </template>
-
-</TabPanel>
-
 
 <TabPanel value="chatbot">
     <template v-for="model in store.config.ai_models">
@@ -357,7 +283,7 @@ const toggle = (event) => {
 </TabPanel>
 
 
-<TabPanel value="0">
+<TabPanel value="general">
     <p class="m-0 section">
         Hightlight Keywords
     </p>
@@ -432,30 +358,6 @@ const toggle = (event) => {
         </div>
     </div>
 
-    <div class="mb-3">
-        <p class="m-0 section">
-            <i class="fa fa-server"></i>
-            Translation Server
-        </p>
-
-        <div class="mb-3">
-            <p>
-                Endpoint
-                (
-                    <span class="cursor-pointer" 
-                        @click="onClickResetTranslationEndpoint">
-                        Reset to default
-                    </span>
-                )
-            </p>
-            <InputText v-model="store.config.translation.endpoint" 
-                class="w-full"/>
-        </div>
-    </div>
-    <!-- <Checkbox v-model="store.flag.enable_auto_save" 
-        inputId="ingredient1" 
-        binary />
-    <label for="ingredient1"> Save dataset file when made any changes </label> -->
 </TabPanel>
 </TabPanels>
 </Tabs>

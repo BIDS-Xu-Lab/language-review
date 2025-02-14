@@ -6,7 +6,6 @@ import HomeMenu from "../components/menus/HomeMenu.vue";
 import Footer from "../components/Footer.vue";
 
 import { useDataStore } from "../DataStore";
-import DecisionPanel from "../components/DecisionPanel.vue";
 import NaviMenu from "../components/menus/NaviMenu.vue";
 
 const store = useDataStore();

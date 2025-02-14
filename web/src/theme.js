@@ -17,9 +17,9 @@ export const theme = {
             light: {
                 primary: {
                     color: '{zinc.950}',
-                    inverseColor: '#ffffff',
+                    inverseColor: '{zinc.100}',
                     hoverColor: '{zinc.900}',
-                    activeColor: '{zinc.800}'
+                    activeColor: '{zinc.950}'
                 },
             },
             dark: {
@@ -39,6 +39,18 @@ export const theme = {
                     text: {
                         primary: {
                             hoverBackground: '{zinc.200}',
+                        }
+                    }
+                }
+            }
+        },
+        datatable: {
+            colorScheme: {
+                light: {
+                    row: {
+                        selected: {
+                            color: '{zinc.900}',
+                            background: '{zinc.200}'
                         }
                     }
                 }

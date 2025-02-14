@@ -9,33 +9,6 @@ const toast = useToast();
 const store = useDataStore();
 
 
-// async function onPromptFileChange(e) {
-//   // check if taxonomy are loaded
-//   if (!store.taxonomy_file) {
-//     toast.add({
-//       severity: 'error',
-//       summary: 'Error',
-//       detail: 'Please load the taxonomy file first',
-//       life: 3000
-//     });
-//     return;
-//   }
-
-//   let { fh, file } = await fs_helper.fsOpenFile({
-//     types: [{
-//           description: 'Text File',
-//           accept: { 'text/plain': ['.txt'] }
-//     }],
-//     multiple: false,
-//   });
-
-//   let text = await file.text();
-
-//   // update the taxonomy list
-//   store.prompt_file = fh;
-//   store.setPromptByText(text)
-// }
-
 async function onDatasetFileChange(e) {
   // ok, let's load the dataset file
   let { fh, file } = await fs_helper.fsOpenFile({
@@ -114,7 +87,7 @@ async function onClickClearDataset() {
   store.items = [];
   store.dataset_file = null;
   store.flag.has_data_unsaved = false;
-  store.working_item_idx = -1;
+  store.working_item = null;
 }
 
 function onClickSetting() {
