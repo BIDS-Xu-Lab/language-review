@@ -100,7 +100,7 @@ function onClickLoadSample() {
 
 function onClickHelp() {
   // open a new tab to wiki page
-  window.open('https://github.com/BIDS-Xu-Lab/novelty-reviewer/wiki', '_blank');
+  window.open('https://github.com/BIDS-Xu-Lab/language-review/wiki', '_blank');
 }
 
 </script>

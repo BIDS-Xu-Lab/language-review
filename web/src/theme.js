@@ -53,6 +53,14 @@ export const theme = {
                             background: '{zinc.200}'
                         }
                     }
+                },
+                dark: {
+                    row: {
+                        selected: {
+                            color: '{zinc.50}',
+                            background: '{zinc.600}'
+                        }
+                    }
                 }
             }
         }
