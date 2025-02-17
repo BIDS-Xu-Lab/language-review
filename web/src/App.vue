@@ -8,8 +8,6 @@ import Footer from "./components/Footer.vue";
 <RouterView />
 <SettingPanel />
 
-
-
 <Footer />
 <Toast />
 </template>

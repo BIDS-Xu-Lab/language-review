@@ -76,7 +76,7 @@ function summarizeNote(note_text) {
                     <i class="pi pi-search" />
                 </InputIcon>
                 <InputText v-model="filters['global'].value" 
-                    class="w-64"
+                    class="min-w-[10rem] max-w-[20rem]"
                     placeholder="Filter by keyword" size="normal" />
             </IconField>
         </div>

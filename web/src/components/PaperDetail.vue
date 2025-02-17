@@ -47,7 +47,7 @@ async function onClickDecision(result) {
                 </div>
                 <div class="panel-subtitle text-sm">
                     <template v-if="store.working_item">
-                        <i class="fa-regular fa-file-lines"></i>
+                        <font-awesome-icon :icon="['fas', 'angle-right']" />
                         {{ store.working_item?.note_id }}
                     </template>
                     <template v-else>

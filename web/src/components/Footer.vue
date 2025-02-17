@@ -8,7 +8,7 @@ const store = useDataStore();
 <template>
 <div class="footer">
   <div>
-    <i class="fa fa-database"></i>
+    <font-awesome-icon icon="fa-solid fa-database" />
     {{ store.dataset_file?.name }}:
     <b>{{ store.items.length }}</b> items
     
@@ -16,10 +16,9 @@ const store = useDataStore();
   <div>
     <a href="https://github.com/BIDS-Xu-Lab/language-review"
       target="_blank">
-      <i class="fa-brands fa-pagelines"></i>
+      <font-awesome-icon icon="fa-brands fa-github" />
       Language Review
       {{ store.version }}
-      <i class="fa-brands fa-github"></i>
     </a>
   </div>
 </div>

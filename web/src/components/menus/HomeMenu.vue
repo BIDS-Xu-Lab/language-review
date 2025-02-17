@@ -114,30 +114,6 @@ function onClickHelp() {
 
     <div class="menu-group-box">
 
-      <!-- <div class="flex flex-col mr-2 px-3">
-        <div class="oper-item">
-
-          <label class="file-label">
-            <i class="fa-regular fa-file-code"></i>
-            Prompt Template File
-            <a target="_blank" href="./sample/prompt.txt" title="Download example prompt">
-              <i class="fa-regular fa-question-circle"></i>
-            </a>
-          </label>
-          <div class="file-zone" 
-            v-tooltip.bottom="'Load the prompt file for LLMs'" 
-            :class="{ 'file-zone-loaded': store.prompt_file }" 
-            @click="onPromptFileChange">
-            <template v-if="store.prompt_file">
-              {{ store.prompt_file.name }}
-            </template>
-            <template v-else>
-              Load the prompt file
-            </template>
-          </div>
-        </div>
-      </div> -->
-
       <div class="flex flex-col mr-2 px-3">
         <div class="oper-item">
 
