@@ -8,7 +8,7 @@ import { pubmed } from './utils/pubmed';
 
 export const useDataStore = defineStore('jarvis', {
 state: () => ({
-    version: '1.0.0',
+    version: '1.0.1',
     current_page: '',
     config: {
         keywords: [
